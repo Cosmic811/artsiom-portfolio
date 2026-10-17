@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+.research/
+.sites-runtime/
+test-results/
+playwright-report/
+*.tar.gz
+*.tsbuildinfo
+.env*

@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+.research
+.sites-runtime
+package-lock.json
+next-env.d.ts
+*.svg
