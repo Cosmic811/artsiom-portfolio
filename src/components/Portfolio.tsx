@@ -165,7 +165,7 @@ export function Portfolio() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Artsiom Makarevich",
-    jobTitle: "Frontend Developer",
+    jobTitle: "Fullstack Developer",
     url: siteUrl,
     sameAs: [contact.github, contact.linkedin],
     knowsAbout: ["React", "TypeScript", "JavaScript", "Next.js"],

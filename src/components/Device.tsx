@@ -66,6 +66,7 @@ export function Device({
     lang,
   ].join(":");
   const previousView = useRef(viewKey);
+  const selectionView = useRef(viewKey);
   const title = screenTitle(nav, t);
   const syncScrollIndicator = useCallback(() => {
     const screen = screenRef.current,
@@ -106,9 +107,15 @@ export function Device({
     if (!screen) return;
     screen.scrollTop = nav.scroll;
     const selected = screen.querySelector<HTMLElement>(".is-selected");
-    (selected ?? screen).focus({ preventScroll: true });
-  }, [viewKey, nav.scroll]);
+    (nav.screen === "project" ? screen : (selected ?? screen)).focus({
+      preventScroll: true,
+    });
+  }, [viewKey, nav.scroll, nav.screen]);
   useEffect(() => {
+    if (selectionView.current !== viewKey) {
+      selectionView.current = viewKey;
+      return;
+    }
     const screen = screenRef.current;
     const row = screen?.querySelector<HTMLElement>(".is-selected");
     if (!screen || !row) return;
@@ -118,7 +125,7 @@ export function Device({
       screen.scrollTop + screen.clientHeight
     )
       screen.scrollTop = row.offsetTop + row.offsetHeight - screen.clientHeight;
-  }, [nav.selected]);
+  }, [nav.selected, viewKey]);
   function resetTilt() {
     if (tiltFrame.current !== null) cancelAnimationFrame(tiltFrame.current);
     deviceRef.current?.style.setProperty("--tilt-x", "0deg");
@@ -162,12 +169,19 @@ export function Device({
               <BatteryFull size={21} strokeWidth={1.5} aria-hidden="true" />
             </div>
             <div className="lcd-heading">
-              <span>
-                {nav.screen !== "main" && (
+              {nav.screen !== "main" ? (
+                <button
+                  className="lcd-back"
+                  onClick={back}
+                  aria-label={`${t.back}: ${title}`}
+                  title={t.back}
+                >
                   <ChevronLeft size={12} aria-hidden="true" />
-                )}
-                {title}
-              </span>
+                  <span>{title}</span>
+                </button>
+              ) : (
+                <span>{title}</span>
+              )}
               <span className="lcd-counter">
                 {entries.length
                   ? `${nav.selected + 1}/${entries.length}`
@@ -285,8 +299,14 @@ export function Device({
         </div>
       </section>
       <p className="device-instruction">
-        {t.instruction}
-        <span>{t.keys}</span>
+        <span className="instruction-desktop">
+          {t.instruction}
+          <span className="instruction-detail">{t.keys}</span>
+        </span>
+        <span className="instruction-touch">
+          {t.touchInstruction}
+          <span className="instruction-detail">{t.touchSelect}</span>
+        </span>
       </p>
     </div>
   );

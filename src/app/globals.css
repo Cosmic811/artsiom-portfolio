@@ -123,7 +123,7 @@ a:focus-visible {
   line-height: 1.8;
   margin: 23px 0 0;
   max-width: 230px;
-  color: #777e6f;
+  color: #5e6756;
 }
 .device-stage {
   position: relative;
@@ -274,7 +274,7 @@ a:focus-visible {
   font-weight: bold;
   background: #dce0d1;
 }
-.lcd-heading > span:first-child {
+.lcd-heading > :first-child {
   display: flex;
   align-items: center;
   gap: 3px;
@@ -283,9 +283,27 @@ a:focus-visible {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.lcd-back {
+  flex: 1;
+  align-self: stretch;
+  padding: 0;
+  text-align: left;
+}
+.lcd-back svg {
+  flex-shrink: 0;
+}
+.lcd-back span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lcd-back:focus-visible {
+  outline: 1px dotted currentColor;
+  outline-offset: -2px;
+  border-radius: 0;
+}
 .lcd-counter {
-  font-size: 9px;
-  color: #607051;
+  font-size: 10px;
+  color: #4f6042;
   font-weight: 400;
   margin-left: 8px;
   letter-spacing: 0.4px;
@@ -381,8 +399,8 @@ a:focus-visible {
 }
 .row-number {
   font-family: Arial, sans-serif;
-  font-size: 8px;
-  color: #748565;
+  font-size: 9px;
+  color: #536347;
   margin-right: 3px;
 }
 .lcd-row.is-selected {
@@ -404,10 +422,10 @@ a:focus-visible {
   border-radius: 0;
 }
 .lcd-category {
-  font-size: 9px;
+  font-size: 10px;
   padding: 10px 15px 7px;
   margin: 0;
-  color: #5f7051;
+  color: #4f6042;
   line-height: 1.5;
   border-bottom: 1px solid #b9c2a9;
 }
@@ -435,7 +453,7 @@ a:focus-visible {
   color: #536246;
 }
 .lcd-eyebrow {
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.6;
   color: #536347;
   display: block;
@@ -453,8 +471,8 @@ a:focus-visible {
   border-top: 1px solid #aab69a;
   padding-top: 4px;
   margin-top: 14px;
-  font-size: 9px;
-  color: #5d704d;
+  font-size: 10px;
+  color: #4f6042;
 }
 .lcd-pager button {
   min-height: 34px;
@@ -489,6 +507,39 @@ a:focus-visible {
   color: #64794e;
   font-size: 10px;
 }
+.project-summary {
+  padding: 10px 13px 9px;
+  font-size: 12px;
+  line-height: 1.55;
+  border-bottom: 1px solid #aab69a;
+}
+.project-summary p {
+  margin: 0;
+}
+.project-summary .project-core-stack {
+  margin-top: 7px;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: #4d5d40;
+}
+.lcd-menu--project {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.lcd-menu--project .lcd-row {
+  grid-column: 1 / -1;
+}
+.lcd-menu--project .project-quick-link {
+  grid-column: auto;
+  font-size: 12px;
+  gap: 3px;
+}
+.lcd-menu--project .project-quick-link--wide {
+  grid-column: 1 / -1;
+}
+.project-quick-link + .project-quick-link {
+  border-left: 1px solid #8a997a44;
+}
 .click-wheel {
   width: var(--wheel-size);
   height: var(--wheel-size);
@@ -517,7 +568,7 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #7b866c;
+  color: #59674b;
   border-radius: 50%;
   transition:
     color 0.12s,
@@ -598,20 +649,23 @@ a:focus-visible {
   margin-top: 14px;
 }
 .device-instruction {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.2px;
-  color: #68735d;
+  color: #515d48;
   line-height: 1.8;
   text-align: center;
   margin: 30px 0 0;
 }
-.device-instruction > span {
+.instruction-detail {
   display: block;
   font-family: Arial, sans-serif;
-  font-size: 10px;
+  font-size: 11.5px;
   letter-spacing: 0.3px;
-  color: #838b76;
+  color: #5b6650;
   margin-top: 2px;
+}
+.instruction-touch {
+  display: none;
 }
 .boot-screen {
   position: absolute;
@@ -858,10 +912,6 @@ html[data-am-start="pending"] .boot-screen {
   }
   .device-instruction {
     margin-top: 23px;
-    font-size: 11px;
-  }
-  .device-instruction > span {
-    font-size: 9px;
   }
   .identity-mark {
     margin-bottom: 30px;
@@ -1000,10 +1050,6 @@ html[data-am-start="pending"] .boot-screen {
   }
   .device-instruction {
     margin-top: 25px;
-    font-size: 11px;
-  }
-  .device-instruction > span {
-    font-size: 9px;
   }
   .contact-shadow {
     height: 21px;
@@ -1041,8 +1087,13 @@ html[data-am-start="pending"] .boot-screen {
     min-height: 33px;
     font-size: 13px;
   }
-  .device-instruction > span {
-    font-size: 8.5px;
+}
+@media (max-width: 700px), (pointer: coarse) {
+  .instruction-desktop {
+    display: none;
+  }
+  .instruction-touch {
+    display: block;
   }
 }
 @media (pointer: coarse) {

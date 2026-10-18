@@ -45,6 +45,7 @@ The name uses self-hosted EB Garamond Medium. Arial provides the utilitarian dev
 | ---------------------------- | ----------------------------------------------------- |
 | Rotate wheel                 | Navigate menus; scroll text views                     |
 | MENU / Escape / Backspace    | Return and restore the previous selection             |
+| LCD title with back arrow    | Return to the previous screen by click or keyboard    |
 | Center / Enter / Space       | Select the highlighted item                           |
 | Previous / Next              | Navigate; change About pages; scroll other text views |
 | Printed HOME / keyboard Home | Return to the first item of the main menu             |
@@ -52,9 +53,11 @@ The name uses self-hosted EB Garamond Medium. Arial provides the utilitarian dev
 
 Up/Down navigate or scroll. Left/Right also change About pages. Keyboard handling is scoped to the device and excludes editable/native fields. The LCD remains directly clickable, touch-scrollable and scrollable with a mouse wheel. Its custom scrolling indicator replaces the browser scrollbar without replacing native scrolling behavior.
 
+Small screens and coarse-pointer devices show wheel/tap instructions. Desktop pointers keep the keyboard shortcut guide. These hints do not change keyboard availability on any device.
+
 ## Internal hierarchy
 
-- Projects → project → Overview / Technologies / Highlights / GitHub / verified Live Demo.
+- Projects → project opens its description, core stack and direct Demo / GitHub links immediately. Full Technologies and Highlights remain one step away inside the LCD.
 - Skills → category → skill → related projects or supporting GitHub work.
 - Settings → Language → English / Русский.
 - About uses two short pages. Experience, Contact and Resume remain inside the device.
@@ -69,7 +72,7 @@ No external page sections, project grids, contact panels, modal case studies, pl
 
 Place the actual English PDF at `public/resume.pdf`, then set `contact.resume` to `/resume.pdf` in `src/content/portfolio.ts`. Until the real file is provided, the Resume screen states that it is required and offers Experience and LinkedIn. No resume has been fabricated or linked to a missing file.
 
-Email and Telegram remain omitted until configured in that same object. [Content evidence](docs/content-evidence.md) documents the public repository sources and project boundaries.
+Email and Telegram are available first in Contact. Their owner-supplied values are configured in that same object. [Content evidence](docs/content-evidence.md) documents the public repository sources and project boundaries.
 
 ## Deployment
 

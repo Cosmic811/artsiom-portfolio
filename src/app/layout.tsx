@@ -16,11 +16,11 @@ const editorialFont = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   alternates: { canonical: siteUrl },
-  title: "Artsiom Makarevich — Frontend Developer",
+  title: "Artsiom Makarevich — Fullstack Developer",
   description:
     "React, TypeScript and Next.js developer. Explore creative web experiences, thoughtful interfaces and reliable product engineering through an interactive click-wheel portfolio.",
   openGraph: {
-    title: "Artsiom Makarevich — Frontend Developer",
+    title: "Artsiom Makarevich — Fullstack Developer",
     description:
       "A digital portfolio. An analog feeling. React, TypeScript and Next.js.",
     type: "website",
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
         url: assetUrl("/og.jpg"),
         width: 1200,
         height: 630,
-        alt: "Artsiom Makarevich — a click-wheel frontend portfolio",
+        alt: "Artsiom Makarevich — a click-wheel fullstack portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Artsiom Makarevich — Frontend Developer",
+    title: "Artsiom Makarevich — Fullstack Developer",
   },
   robots: { index: true, follow: true },
   icons: { icon: assetPath("/icon.svg") },

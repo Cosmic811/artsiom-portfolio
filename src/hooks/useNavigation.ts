@@ -5,7 +5,6 @@ export type Screen =
   | "about"
   | "projects"
   | "project"
-  | "project-overview"
   | "project-stack"
   | "project-highlights"
   | "skills"

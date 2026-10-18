@@ -2,7 +2,7 @@ export type Language = "en" | "ru";
 export const translations = {
   en: {
     name: "Artsiom Makarevich",
-    role: "Frontend Developer",
+    role: "Fullstack Developer",
     tagline: "Building thoughtful digital experiences.",
     main: "Portfolio",
     menu: [
@@ -23,7 +23,6 @@ export const translations = {
       "Accessibility",
       "Web animation",
     ],
-    projectMenu: ["Overview", "Technologies", "Highlights"],
     related: "Related projects",
     supporting: "Explore supporting work on GitHub.",
     settings: "Settings",
@@ -32,6 +31,8 @@ export const translations = {
     selectedLanguage: "Selected",
     instruction: "Use the wheel to explore.",
     keys: "↑ ↓ Navigate · Enter Select · Esc Back",
+    touchInstruction: "Rotate wheel to browse",
+    touchSelect: "Tap center to select · MENU to go back",
     screenLabel: "Interactive portfolio device",
     wheel:
       "Navigation wheel: drag clockwise to move down, counterclockwise to move up.",
@@ -53,7 +54,7 @@ export const translations = {
     scroll: "Rotate wheel to scroll",
     aboutTitle: "Hello, I’m Artsiom.",
     about:
-      "I build web applications with React, TypeScript and Next.js. My focus is thoughtful UI, reliable API integrations and clear frontend architecture.",
+      "I build web applications with React, TypeScript and Next.js. My focus is thoughtful UI, reliable APIs and clear application architecture.",
     approachTitle: "Details make the difference.",
     approach:
       "I work with responsive interfaces and complex application state. I enjoy turning real product flows into experiences that feel clear, useful and complete.",
@@ -78,11 +79,11 @@ export const translations = {
     contact: "Contact",
     skill: "Skill",
     screenReaderIntro:
-      "Interactive portfolio of Artsiom Makarevich, a frontend developer using React, TypeScript and Next.js. All sections and links can be reached through the device menu or keyboard.",
+      "Interactive portfolio of Artsiom Makarevich, a fullstack developer using React, TypeScript and Next.js. All sections and links can be reached through the device menu or keyboard.",
   },
   ru: {
     name: "Артём Макаревич",
-    role: "Фронтенд-разработчик",
+    role: "Фулстек-разработчик",
     tagline: "Создаю продуманные цифровые интерфейсы.",
     main: "Портфолио",
     menu: [
@@ -108,7 +109,6 @@ export const translations = {
       "Доступность",
       "Веб-анимация",
     ],
-    projectMenu: ["Обзор", "Технологии", "Особенности"],
     related: "Связанные проекты",
     supporting: "Другие работы доступны на GitHub.",
     settings: "Настройки",
@@ -117,6 +117,8 @@ export const translations = {
     selectedLanguage: "Выбран",
     instruction: "Вращайте колесо и исследуйте.",
     keys: "↑ ↓ Навигация · Enter Выбрать · Esc Назад",
+    touchInstruction: "Вращайте колесо для навигации",
+    touchSelect: "Нажмите центр для выбора · MENU — назад",
     screenLabel: "Интерактивное устройство с портфолио",
     wheel:
       "Колесо навигации: вращение по часовой стрелке — вниз, против часовой — вверх.",
@@ -138,7 +140,7 @@ export const translations = {
     scroll: "Вращайте колесо для прокрутки",
     aboutTitle: "Привет, я Артём.",
     about:
-      "Создаю веб-приложения на React, TypeScript и Next.js. В фокусе — продуманные интерфейсы, надёжная интеграция API и понятная архитектура фронтенда.",
+      "Создаю веб-приложения на React, TypeScript и Next.js. В фокусе — продуманные интерфейсы, надёжные API и понятная архитектура приложений.",
     approachTitle: "Всё решают детали.",
     approach:
       "Работаю с адаптивными интерфейсами и сложным состоянием приложений. Превращаю реальные продуктовые сценарии в понятные, полезные и завершённые решения.",
@@ -163,7 +165,7 @@ export const translations = {
     contact: "Контакты",
     skill: "Навык",
     screenReaderIntro:
-      "Интерактивное портфолио Артёма Макаревича, фронтенд-разработчика на React, TypeScript и Next.js. Все разделы и ссылки доступны через меню устройства или с клавиатуры.",
+      "Интерактивное портфолио Артёма Макаревича, фулстек-разработчика на React, TypeScript и Next.js. Все разделы и ссылки доступны через меню устройства или с клавиатуры.",
   },
 } as const;
 export type Dictionary = (typeof translations)[Language];
