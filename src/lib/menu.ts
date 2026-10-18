@@ -75,14 +75,6 @@ export function getMenu(
   if (nav.screen === "project") {
     const p = projects[nav.project];
     return [
-      open("overview", t.projectMenu[0], "project-overview"),
-      open("technologies", t.projectMenu[1], "project-stack"),
-      open("highlights", t.projectMenu[2], "project-highlights"),
-      {
-        id: "source",
-        label: t.github,
-        action: { type: "external", href: p.repo },
-      },
       ...(p.live
         ? [
             {
@@ -92,6 +84,13 @@ export function getMenu(
             },
           ]
         : []),
+      {
+        id: "source",
+        label: t.github,
+        action: { type: "external", href: p.repo },
+      },
+      open("technologies", t.technologies, "project-stack"),
+      open("highlights", t.highlights, "project-highlights"),
     ];
   }
   if (nav.screen === "skills")
@@ -115,25 +114,6 @@ export function getMenu(
     ];
   if (nav.screen === "contact")
     return [
-      {
-        id: "github",
-        label: t.github,
-        action: { type: "external", href: contact.github },
-      },
-      {
-        id: "linkedin",
-        label: t.linkedin,
-        action: { type: "external", href: contact.linkedin },
-      },
-      ...(contact.telegram
-        ? [
-            {
-              id: "telegram",
-              label: t.telegram,
-              action: { type: "external" as const, href: contact.telegram },
-            },
-          ]
-        : []),
       ...(contact.email
         ? [
             {
@@ -146,6 +126,25 @@ export function getMenu(
             },
           ]
         : []),
+      ...(contact.telegram
+        ? [
+            {
+              id: "telegram",
+              label: t.telegram,
+              action: { type: "external" as const, href: contact.telegram },
+            },
+          ]
+        : []),
+      {
+        id: "github",
+        label: t.github,
+        action: { type: "external", href: contact.github },
+      },
+      {
+        id: "linkedin",
+        label: t.linkedin,
+        action: { type: "external", href: contact.linkedin },
+      },
     ];
   if (nav.screen === "resume")
     return [
@@ -181,7 +180,6 @@ export function getMenu(
 }
 export function screenTitle(nav: Navigation, t: Dictionary) {
   if (nav.screen === "project") return projects[nav.project].title;
-  if (nav.screen === "project-overview") return t.overview;
   if (nav.screen === "project-stack") return t.technologies;
   if (nav.screen === "project-highlights") return t.highlights;
   if (nav.screen === "skill") return t.groups[nav.group];
