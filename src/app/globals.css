@@ -464,6 +464,30 @@ a:focus-visible {
   display: block;
   margin-bottom: 12px;
 }
+.lcd-experience .lcd-company {
+  margin-bottom: 5px;
+}
+.lcd-experience section {
+  border-top: 1px solid #aab69a;
+  padding-top: 9px;
+  margin-top: 12px;
+}
+.lcd-experience h3 {
+  font-size: inherit;
+  line-height: 1.5;
+  margin: 0 0 6px;
+}
+.experience-responsibilities {
+  padding-left: 15px;
+  margin: 0;
+}
+.experience-responsibilities li {
+  padding-left: 2px;
+  margin-bottom: 10px;
+}
+.experience-responsibilities li:last-child {
+  margin-bottom: 0;
+}
 .lcd-pager {
   display: flex;
   align-items: center;
