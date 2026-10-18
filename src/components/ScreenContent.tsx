@@ -23,7 +23,10 @@ export function ScreenContent({
   page,
 }: Props) {
   const menu = (
-    <nav className="lcd-menu" aria-label={t.screen}>
+    <nav
+      className={`lcd-menu${nav.screen === "project" ? " lcd-menu--project" : ""}`}
+      aria-label={t.screen}
+    >
       {entries.map((entry, i) => {
         const contents = (
           <>
@@ -46,7 +49,7 @@ export function ScreenContent({
           </>
         );
         const props = {
-          className: `lcd-row ${nav.selected === i ? "is-selected" : ""}`,
+          className: `lcd-row ${nav.selected === i ? "is-selected" : ""}${nav.screen === "project" && entry.action.type === "external" ? ` project-quick-link${!projects[nav.project].live ? " project-quick-link--wide" : ""}` : ""}`,
           onFocus: () => highlight(i),
           onPointerMove: () => highlight(i),
           "aria-current": nav.selected === i ? ("true" as const) : undefined,
@@ -92,7 +95,12 @@ export function ScreenContent({
   if (nav.screen === "project")
     return (
       <>
-        <p className="lcd-category">{projects[nav.project].category[lang]}</p>
+        <article className="project-summary">
+          <p>{projects[nav.project].description[lang]}</p>
+          <p className="project-core-stack" aria-label={t.technologies}>
+            {projects[nav.project].stack.slice(0, 3).join(" · ")}
+          </p>
+        </article>
         {menu}
       </>
     );
@@ -145,14 +153,6 @@ export function ScreenContent({
       </article>
     );
   const p = projects[nav.project];
-  if (nav.screen === "project-overview")
-    return (
-      <article className="lcd-article">
-        <span className="lcd-eyebrow">{p.category[lang]}</span>
-        <h2>{p.title}</h2>
-        <p>{p.description[lang]}</p>
-      </article>
-    );
   if (nav.screen === "project-stack")
     return (
       <article className="lcd-article">
