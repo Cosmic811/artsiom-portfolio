@@ -12,8 +12,8 @@ export interface Project {
 export const contact = {
   github: "https://github.com/Cosmic811",
   linkedin: "https://www.linkedin.com/in/g1stav/",
-  email: "",
-  telegram: "",
+  email: "wentygame@mail.ru",
+  telegram: "https://t.me/g1stav",
   resume: "",
 };
 export const projects: Project[] = [
