@@ -1,6 +1,6 @@
 "use client";
 import { ArrowUpRight, Check, ChevronLeft, ChevronRight } from "lucide-react";
-import { contact, projects } from "@/content/portfolio";
+import { experienceTechnologies, projects } from "@/content/portfolio";
 import type { Dictionary, Language } from "@/content/i18n";
 import type { Navigation } from "@/hooks/useNavigation";
 import type { MenuEntry } from "@/lib/menu";
@@ -117,7 +117,8 @@ export function ScreenContent({
     return (
       <>
         <article className="lcd-article">
-          <p>{contact.resume ? t.download : t.resume}</p>
+          <h2>{t.resumeRole}</h2>
+          <p className="lcd-eyebrow">{t.resumeFormat}</p>
         </article>
         {menu}
       </>
@@ -145,11 +146,22 @@ export function ScreenContent({
     );
   if (nav.screen === "experience")
     return (
-      <article className="lcd-article">
-        <span className="lcd-eyebrow">{t.dates}</span>
+      <article className="lcd-article lcd-experience">
         <h2>{t.experienceTitle}</h2>
         <strong className="lcd-company">{t.company}</strong>
-        <p>{t.experience}</p>
+        <p className="lcd-eyebrow">{t.dates}</p>
+        <section>
+          <h3>{t.technologies}</h3>
+          <p>{experienceTechnologies.join(" · ")}</p>
+        </section>
+        <section>
+          <h3>{t.responsibilities}</h3>
+          <ul className="experience-responsibilities">
+            {t.experienceResponsibilities.map((responsibility) => (
+              <li key={responsibility}>{responsibility}</li>
+            ))}
+          </ul>
+        </section>
       </article>
     );
   const p = projects[nav.project];

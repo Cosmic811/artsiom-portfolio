@@ -12,10 +12,17 @@ export interface Project {
 export const contact = {
   github: "https://github.com/Cosmic811",
   linkedin: "https://www.linkedin.com/in/g1stav/",
-  email: "wentygame@mail.ru",
+  email: "gwentygame@mail.ru",
   telegram: "https://t.me/g1stav",
-  resume: "",
+  resume: "/resume.pdf",
 };
+export const experienceTechnologies = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "REST APIs",
+  "Supabase",
+] as const;
 export const projects: Project[] = [
   {
     id: "arka",
