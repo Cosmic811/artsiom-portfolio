@@ -70,9 +70,13 @@ No external page sections, project grids, contact panels, modal case studies, pl
 
 ## Resume and contact integration
 
-Place the actual English PDF at `public/resume.pdf`, then set `contact.resume` to `/resume.pdf` in `src/content/portfolio.ts`. Until the real file is provided, the Resume screen states that it is required and offers Experience and LinkedIn. No resume has been fabricated or linked to a missing file.
+The owner's original one-page English resume is included unchanged at `public/resume.pdf`, with `contact.resume=/resume.pdf`. The LCD offers one Download PDF action at `/artsiom-portfolio/resume.pdf` on GitHub Pages. The screen identifies the role, language, format and page count without repeating the download label.
 
-Email and Telegram are available first in Contact. Their owner-supplied values are configured in that same object. [Content evidence](docs/content-evidence.md) documents the public repository sources and project boundaries.
+Email (`gwentygame@mail.ru`) and Telegram are available first in Contact, followed by GitHub and LinkedIn. These values are checked against the supplied resume and configured in the same object. [Content evidence](docs/content-evidence.md) documents the public repository sources and project boundaries.
+
+Experience presents the resume-backed Full Stack Developer (Frontend-focused) role, confidential employer, July 2025–August 2026 period, five main technologies and three responsibilities in English and Russian. It uses the existing LCD scrolling and does not add unsupported achievements.
+
+The website retains **Artsiom Makarevich**; the supplied PDF retains **Artem Makarevich**. This transliteration difference is intentionally left for the owner to resolve; neither document has been silently renamed.
 
 ## Deployment
 
