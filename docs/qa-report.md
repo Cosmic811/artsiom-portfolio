@@ -17,7 +17,7 @@ The interaction suite covers clockwise/counterclockwise angle wrapping, accumula
 The static export was served separately from the development server and inspected in the app browser.
 
 - All main sections and all five project entries opened.
-- Overview, Technologies and Highlights were read for every project.
+- Each project opens its description, core stack and Demo/GitHub actions immediately. Technologies and Highlights remain nested inside the LCD.
 - Skills and related-project links preserved their complete Back history.
 - MENU, Previous, Next, Center and HOME controls worked.
 - Clockwise and counterclockwise mouse drags moved selection in the expected directions.
@@ -43,7 +43,17 @@ The three supplied live demos and the GitHub profile returned HTTP 200. Reposito
 
 Touch-like pointer sequences were executed against the gesture engine; physical touchscreen hardware, pen hardware and a dedicated screen reader were not available. Reduced-motion policy was tested in code and the CSS/media-query paths were inspected; browser-level media emulation was not available. Browser restart persistence relies on localStorage, with reconstruction covered by tests rather than a forced restart of the user's browser.
 
-The actual resume PDF, email and Telegram details have not been supplied. Their explicit integration points are documented in the README.
+The owner-supplied email and Telegram are connected. The actual resume PDF has not been supplied; its integration point is documented in the README and no download links to a missing file are shown.
+
+## Recruiter-flow refinement — 18 October 2026
+
+- Preserved the established composition, typefaces, body materials and palette. Updated the primary role to Fullstack Developer in both languages, page metadata, structured data and visual previews. Historical job titles and project names retain their original meaning.
+- All five project summaries opened at scroll position zero, with the core stack and direct links available immediately. Projects without a verified live demo show GitHub only. Back restored the selected detail action and its scroll position.
+- Verified the LCD heading as a real Back button: Language → Settings by click, then Settings → main by Enter, restoring the selected Settings item. MENU remains available.
+- Contact exposes `mailto:wentygame@mail.ru` and `https://t.me/g1stav` before the profile links. Inspected link destinations without sending a message.
+- Checked responsive layouts at 360×780, 390×844, 768×900, 1024×600 and 1440×900. Mobile widths show wheel/tap instructions, desktop widths show keyboard instructions, and neither language produced horizontal overflow. Coarse-pointer devices use the same touch hints through CSS.
+- Instructions use 13px primary and 11.5px secondary text with darker green colors. The project summary and its core stack remain readable within the existing screen geometry.
+- Production export and lint passed; the existing 21 interaction checks passed. No browser warnings or errors were observed in the local production export. Physical phone testing remains outstanding; viewport checks do not replace real hardware verification.
 
 ## Visual previews
 
