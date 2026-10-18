@@ -58,14 +58,18 @@ export const translations = {
     approachTitle: "Details make the difference.",
     approach:
       "I work with responsive interfaces and complex application state. I enjoy turning real product flows into experiences that feel clear, useful and complete.",
-    experienceTitle: "Frontend Developer",
-    company: "NDA Company",
+    experienceTitle: "Full Stack Developer (Frontend-focused)",
+    company: "Confidential Company (NDA)",
     dates: "July 2025 — August 2026",
-    experience:
-      "Frontend development in a confidential commercial environment. Role details can be discussed within the limits of the NDA.",
+    responsibilities: "Responsibilities",
+    experienceResponsibilities: [
+      "Built and maintained responsive interfaces and API-driven application features.",
+      "Integrated external APIs, Supabase data flows, and GA4/GTM analytics.",
+      "Debugged frontend and API issues, improved loading/error states, and verified changes before deployment.",
+    ],
     resumeTitle: "Resume",
-    resume:
-      "The actual English-language PDF is required before a download can be enabled. You can review my experience or connect on LinkedIn in the meantime.",
+    resumeRole: "Full Stack Developer",
+    resumeFormat: "English · PDF · 1 page",
     download: "Download PDF",
     github: "GitHub",
     linkedin: "LinkedIn",
@@ -144,14 +148,18 @@ export const translations = {
     approachTitle: "Всё решают детали.",
     approach:
       "Работаю с адаптивными интерфейсами и сложным состоянием приложений. Превращаю реальные продуктовые сценарии в понятные, полезные и завершённые решения.",
-    experienceTitle: "Фронтенд-разработчик",
+    experienceTitle: "Фулстек-разработчик (с фокусом на фронтенд)",
     company: "Компания под NDA",
     dates: "Июль 2025 — Август 2026",
-    experience:
-      "Фронтенд-разработка в коммерческой среде под соглашением о конфиденциальности. Подробности работы можно обсудить в рамках NDA.",
+    responsibilities: "Обязанности",
+    experienceResponsibilities: [
+      "Разрабатывал и поддерживал адаптивные интерфейсы и функции приложений, работающие через API.",
+      "Интегрировал внешние API, потоки данных Supabase и аналитику GA4/GTM.",
+      "Исправлял ошибки во фронтенде и API, улучшал состояния загрузки и ошибок, проверял изменения перед публикацией.",
+    ],
     resumeTitle: "Резюме",
-    resume:
-      "Для скачивания нужен настоящий PDF на английском. Пока можно изучить мой опыт или связаться через LinkedIn.",
+    resumeRole: "Фулстек-разработчик",
+    resumeFormat: "Английский · PDF · 1 страница",
     download: "Скачать PDF",
     github: "GitHub",
     linkedin: "LinkedIn",
